@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football_news_mobile/models/news_entry.dart';
+import 'package:football_news_mobile/utils/config.dart';
 
 class NewsDetailPage extends StatelessWidget {
   final NewsEntry news;
@@ -28,7 +29,7 @@ class NewsDetailPage extends StatelessWidget {
             // Thumbnail image
             if (news.thumbnail != null && news.thumbnail!.isNotEmpty)
               Image.network(
-                'http://localhost:8000/proxy-image/?url=${Uri.encodeComponent(news.thumbnail!)}',
+                '$getBaseUrl()/proxy-image/?url=${Uri.encodeComponent(news.thumbnail!)}',
                 width: double.infinity,
                 height: 250,
                 fit: BoxFit.cover,

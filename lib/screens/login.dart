@@ -1,10 +1,11 @@
-import 'package:football_news_mobile/screens/menu.dart';
+import 'package:football_news_mobile/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:football_news_mobile/screens/register.dart';
+import 'package:football_news_mobile/utils/config.dart';
 
-void main() {
+/*void main() {
   runApp(const LoginApp());
 }
 
@@ -23,7 +24,7 @@ class LoginApp extends StatelessWidget {
       home: const LoginPage(),
     );
   }
-}
+}*/
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -102,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                       // To connect Android emulator with Django on localhost, use URL http://10.0.2.2/
                       // If you using chrome,  use URL http://localhost:8000
                       final response = await request
-                          .login("http://localhost:8000/auth/login/", {
+                          .login("$getBaseUrl()/auth/login4flutter/", {
                         'username': username,
                         'password': password,
                       });

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:football_news_mobile/screens/newslist_form.dart';
-import 'package:football_news_mobile/screens/menu.dart';
+import 'package:football_news_mobile/menu.dart';
 import 'package:football_news_mobile/screens/news_entry_list.dart';
 import 'package:football_news_mobile/screens/login.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
+import 'package:football_news_mobile/utils/config.dart';
 
 class ItemCard extends StatelessWidget {
   // Menampilkan kartu dengan ikon dan nama.
@@ -53,7 +54,7 @@ class ItemCard extends StatelessWidget {
             // If you using chrome,  use URL http://localhost:8000
 
             final response = await request.logout(
-                "http://localhost:8000/auth/logout/");
+                "$getBaseUrl()/auth/logout/");
             String message = response["message"];
             if (context.mounted) {
               if (response['status']) {
@@ -63,7 +64,7 @@ class ItemCard extends StatelessWidget {
                 ));
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                  MaterialPageRoute(builder: (context) => LoginPage()),
                 );
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(

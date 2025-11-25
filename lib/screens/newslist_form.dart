@@ -3,7 +3,8 @@ import 'package:football_news_mobile/widgets/left_drawer.dart';
 import 'dart:convert';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
-import 'package:football_news_mobile/screens/menu.dart';
+import 'package:football_news_mobile/menu.dart';
+import 'package:football_news_mobile/utils/config.dart';
 
 class NewsFormPage extends StatefulWidget {
   const NewsFormPage({super.key});
@@ -175,7 +176,7 @@ class _NewsFormPageState extends State<NewsFormPage> {
                           // If you using chrome,  use URL http://localhost:8000
 
                           final response = await request.postJson(
-                            "http://localhost:8000/create-flutter/",
+                            "$getBaseUrl()/create-flutter/",
                             jsonEncode({
                               "title": _title,
                               "content": _content,

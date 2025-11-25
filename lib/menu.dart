@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 // Import drawer widget
-import 'package:football_news_mobile/screens/newslist_form.dart';
 import 'package:football_news_mobile/widgets/left_drawer.dart';
 import 'package:football_news_mobile/widgets/news_card.dart';
 

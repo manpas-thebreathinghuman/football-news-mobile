@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football_news_mobile/models/news_entry.dart';
+import 'package:football_news_mobile/utils/config.dart';
 
 class NewsEntryCard extends StatelessWidget {
   final NewsEntry news;
@@ -33,7 +34,7 @@ class NewsEntryCard extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(6),
                   child: Image.network(
-                    'http://localhost:8000/proxy-image/?url=${Uri.encodeComponent(news.thumbnail ?? '')}',
+                    '$getBaseUrl()/proxy-image/?url=${Uri.encodeComponent(news.thumbnail ?? '')}',
                     height: 150,
                     width: double.infinity,
                     fit: BoxFit.cover,

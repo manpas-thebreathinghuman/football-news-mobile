@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:football_news_mobile/screens/login.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
+import 'package:football_news_mobile/utils/config.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -120,7 +121,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       // To connect Android emulator with Django on localhost, use URL http://10.0.2.2/
                       // If you using chrome,  use URL http://localhost:8000
                       final response = await request.postJson(
-                          "http://localhost:8000/auth/register/",
+                          "$getBaseUrl()/auth/register/",
                           jsonEncode({
                             "username": username,
                             "password1": password1,

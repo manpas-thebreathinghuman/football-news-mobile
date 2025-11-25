@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:football_news_mobile/screens/menu.dart';
+import 'package:football_news_mobile/menu.dart';
 import 'package:football_news_mobile/screens/newslist_form.dart';
 import 'package:football_news_mobile/screens/news_entry_list.dart';
 
@@ -70,7 +70,6 @@ class LeftDrawer extends StatelessWidget {
               );
             },
           ),
-// TODO: Buat ListTile baru untuk ke halaman melihat news
         ],
       ),
     );
